@@ -138,6 +138,7 @@ struct EditOverrideForm: View {
                         },
                         label: {
                             Image(systemName: "questionmark.circle")
+                                .accessibilityLabel(Text("Help"))
                         }
                     )
                 }

@@ -52,6 +52,7 @@ struct AddOverrideForm: View {
                         },
                         label: {
                             Image(systemName: "questionmark.circle")
+                                .accessibilityLabel(Text("Help"))
                         }
                     )
                 }
