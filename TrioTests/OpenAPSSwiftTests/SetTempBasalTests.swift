@@ -335,8 +335,7 @@ import Testing
         #expect(requestedTemp.reason == ". Setting neutral temp basal of 0.8U/hr")
     }
 
-    @Test("the suggested rate is deliverable", arguments: pumpTables)
-    func deliverable(pump: String, rates: [Decimal]) throws {
+    @Test("the suggested rate is deliverable", arguments: pumpTables) func deliverable(pump: String, rates: [Decimal]) throws {
         let profile = createProfile(
             currentBasal: 3,
             maxDailyBasal: 4,
