@@ -48,6 +48,10 @@ extension Home {
         @State var pullOffset: CGFloat = 0
         @State var isRefreshArmed = false
         @State var isForcingLoop = false
+        /// Date under the finger while the chart is scrubbed, else nil. Owned here (not inside
+        /// `MainChartView`) purely because it is a `@Binding`; the selection card itself still
+        /// renders inside the chart's own overlay, not in a separate zone.
+        @State var chartSelection: Date? = nil
 
         @FetchRequest(fetchRequest: OverrideStored.fetch(
             NSPredicate.lastActiveOverride,
@@ -86,7 +90,8 @@ extension Home {
                     displayYgridLines: state.displayYgridLines,
                     thresholdLines: state.thresholdLines,
                     state: state,
-                    showCobIobChart: state.showCobIobChart
+                    showCobIobChart: state.showCobIobChart,
+                    selection: $chartSelection
                 )
             }
             .overlay(alignment: .bottomTrailing) {

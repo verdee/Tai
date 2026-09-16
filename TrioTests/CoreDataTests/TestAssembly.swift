@@ -11,6 +11,18 @@ class TestAssembly: Assembly {
     }
 
     func assemble(container: Container) {
+        // Isolate SettingsManager/FileStorage from the simulator's real Documents
+        // directory, whose persisted preferences.json/settings.json would otherwise
+        // leak the developer's own settings (curve, concentration, ...) into tests.
+        container.register(FileStorage.self) { _ in InMemoryFileStorage() }
+            .inObjectScope(.container)
+
+        // Swinject's default `.graph` scope hands out a fresh SettingsManager per top-level
+        // resolve() call; pin it container-wide so a test mutating settings via resolver.resolve
+        // affects the same instance storage received through @Injected.
+        container.register(SettingsManager.self) { r in BaseSettingsManager(resolver: r) }
+            .inObjectScope(.container)
+
         // Override PumpHistoryStorage registration for tests
         container.register(PumpHistoryStorage.self) { r in
             BasePumpHistoryStorage(resolver: r, contextProvider: { self.testContext })
@@ -39,6 +51,11 @@ class TestAssembly: Assembly {
         // Override OverrideStorage registration for tests
         container.register(OverrideStorage.self) { r in
             BaseOverrideStorage(resolver: r, contextProvider: { self.testContext })
+        }.inObjectScope(.container)
+
+        // Override AdjustmentManager registration for tests
+        container.register(AdjustmentManager.self) { r in
+            BaseAdjustmentManager(resolver: r, contextProvider: { self.testContext }, recompute: {})
         }.inObjectScope(.container)
     }
 }
