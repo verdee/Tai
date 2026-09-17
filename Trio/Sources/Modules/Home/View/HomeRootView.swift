@@ -612,7 +612,7 @@ extension Home {
                         " " + dateFormatter.string(from: determination?.deliverAt ?? Date())
 
                     // Add warning if the loop is not closed or if it's a manual temp basal
-                    if state.manualTempBasal || !state.closedLoop {
+                    if state.manualTempBasal || state.dosingMode.automation == .off {
                         title += String(
                             localized: " - not enacted!",
                             comment: "Suffix appended to Home status popup title when the suggestion was not enacted"
@@ -707,7 +707,7 @@ extension Home {
                     " " + dateFormatter.string(from: determination?.deliverAt ?? Date())
 
                 // Add warning if the loop is not closed or if it's a manual temp basal
-                if state.manualTempBasal || !state.closedLoop {
+                if state.manualTempBasal || state.dosingMode.automation == .off {
                     statusTitlePopup += String(
                         localized: " - not enacted!",
                         comment: "Suffix appended to Home status popup title when the suggestion was not enacted"
