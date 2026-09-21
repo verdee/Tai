@@ -674,6 +674,18 @@ extension Home {
                     Text("No Algorithm result").font(.body).foregroundColor(.primary)
                 }
 
+                if state.dosingMode.automation == .off {
+                    Button {
+                        state.isStatusPopupPresented = false
+                        state.showModal(for: .manualTempBasal)
+                    } label: {
+                        Text("Manual Temp Basal")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                    .buttonStyle(.bordered)
+                    .padding(.top)
+                }
+
                 Button {
                     state.isStatusPopupPresented = false
                 } label: {

@@ -414,7 +414,7 @@ extension Settings {
                                     NavigationLink(
                                         destination: ReleaseNotesListView(releases: releaseNotesService.previousReleases)
                                     ) {
-                                        Text("Previous Versions")
+                                        Text("Previous Release Notes")
                                             .foregroundColor(.primary)
                                     }
                                 }
