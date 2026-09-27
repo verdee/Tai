@@ -494,6 +494,10 @@
 		ADA1000AADA1000AADA1000A /* ActiveProfileMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA10009ADA10009ADA10009 /* ActiveProfileMirror.swift */; };
 		ADA1000CADA1000CADA1000C /* ProfileSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1000BADA1000BADA1000B /* ProfileSeeder.swift */; };
 		ADA10010ADA10010ADA10010 /* AdaptProfileDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1000DADA1000DADA1000D /* AdaptProfileDataFlow.swift */; };
+		700D3A2A39B2C5D40BA216F2 /* ManualTempBasalDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48450F49B7618211B72EFE59 /* ManualTempBasalDataFlow.swift */; };
+		E550DFA3E857BDA5A0E7013D /* ManualTempBasalProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE18EBB55950A7048F73B46 /* ManualTempBasalProvider.swift */; };
+		DA4CA2292861E1561AF445FD /* ManualTempBasalStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C50D8EBC51F5F5A7DB3AB5 /* ManualTempBasalStateModel.swift */; };
+		20A4423D33A14A18A7CB09FC /* ManualTempBasalRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889C1B1E0887DE0426CA305 /* ManualTempBasalRootView.swift */; };
 		ADA10011ADA10011ADA10011 /* AdaptProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1000EADA1000EADA1000E /* AdaptProfileProvider.swift */; };
 		ADA10012ADA10012ADA10012 /* AdaptProfileStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1000FADA1000FADA1000F /* AdaptProfileStateModel.swift */; };
 		ADA10014ADA10014ADA10014 /* AdaptProfileRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA10013ADA10013ADA10013 /* AdaptProfileRootView.swift */; };
@@ -1676,6 +1680,10 @@
 		ADA10009ADA10009ADA10009 /* ActiveProfileMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveProfileMirror.swift; sourceTree = "<group>"; };
 		ADA1000BADA1000BADA1000B /* ProfileSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSeeder.swift; sourceTree = "<group>"; };
 		ADA1000DADA1000DADA1000D /* AdaptProfileDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptProfileDataFlow.swift; sourceTree = "<group>"; };
+		48450F49B7618211B72EFE59 /* ManualTempBasalDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualTempBasalDataFlow.swift; sourceTree = "<group>"; };
+		3AE18EBB55950A7048F73B46 /* ManualTempBasalProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualTempBasalProvider.swift; sourceTree = "<group>"; };
+		F8C50D8EBC51F5F5A7DB3AB5 /* ManualTempBasalStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualTempBasalStateModel.swift; sourceTree = "<group>"; };
+		4889C1B1E0887DE0426CA305 /* ManualTempBasalRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualTempBasalRootView.swift; sourceTree = "<group>"; };
 		ADA1000EADA1000EADA1000E /* AdaptProfileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptProfileProvider.swift; sourceTree = "<group>"; };
 		ADA1000FADA1000FADA1000F /* AdaptProfileStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptProfileStateModel.swift; sourceTree = "<group>"; };
 		ADA10013ADA10013ADA10013 /* AdaptProfileRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptProfileRootView.swift; sourceTree = "<group>"; };
@@ -2619,6 +2627,7 @@
 				49F298C92D2D7E2100E4C00D /* KetoProtectSettings */,
 				DDF847DB2C5C28550049BB3B /* LiveActivitySettings */,
 				3811DE1A25C9D48300A708ED /* Main */,
+				C8362B2AFF021508ADC17F0C /* ManualTempBasal */,
 				19D466A129AA2B0A004D5F33 /* MealSettings */,
 				D533BF261CDC1C3F871E7BFD /* NightscoutConfig */,
 				BD47FD142D88AACC0043966B /* Onboarding */,
@@ -3953,6 +3962,25 @@
 				ADA1001DADA1001DADA1001D /* AdaptProfileStateModel+DraftEditor.swift */,
 			);
 			path = "AdaptProfileStateModel+Extensions";
+			sourceTree = "<group>";
+		};
+		C8362B2AFF021508ADC17F0C /* ManualTempBasal */ = {
+			isa = PBXGroup;
+			children = (
+				48450F49B7618211B72EFE59 /* ManualTempBasalDataFlow.swift */,
+				3AE18EBB55950A7048F73B46 /* ManualTempBasalProvider.swift */,
+				F8C50D8EBC51F5F5A7DB3AB5 /* ManualTempBasalStateModel.swift */,
+				BEB4A6C8D96100933E8480C6 /* View */,
+			);
+			path = ManualTempBasal;
+			sourceTree = "<group>";
+		};
+		BEB4A6C8D96100933E8480C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4889C1B1E0887DE0426CA305 /* ManualTempBasalRootView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B015AFF22E600000000D7351 /* Adjustments */ = {
@@ -5687,6 +5715,10 @@
 				ADA10011ADA10011ADA10011 /* AdaptProfileProvider.swift in Sources */,
 				ADA10012ADA10012ADA10012 /* AdaptProfileStateModel.swift in Sources */,
 				ADA10014ADA10014ADA10014 /* AdaptProfileRootView.swift in Sources */,
+				700D3A2A39B2C5D40BA216F2 /* ManualTempBasalDataFlow.swift in Sources */,
+				E550DFA3E857BDA5A0E7013D /* ManualTempBasalProvider.swift in Sources */,
+				DA4CA2292861E1561AF445FD /* ManualTempBasalStateModel.swift in Sources */,
+				20A4423D33A14A18A7CB09FC /* ManualTempBasalRootView.swift in Sources */,
 				ADA10018ADA10018ADA10018 /* AddProfileForm.swift in Sources */,
 				ADA1001EADA1001EADA1001E /* AdaptProfileStateModel+DraftEditor.swift in Sources */,
 				ADA10020ADA10020ADA10020 /* DraftEditorRootView.swift in Sources */,
